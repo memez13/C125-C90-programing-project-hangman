@@ -17,7 +17,7 @@ int main() {
 	printf("      ||\n");
 	printf("______||\n");
 
-	printf("Enter a guess: ");
+	printf("Make a guess: ");
 	scanf("%49s", &guess);
 do {
 
@@ -27,6 +27,7 @@ do {
 
 	else {
 		x++;
+		printf("Wrong guess!");
 	}
 
 	if (x == 1) {
@@ -125,7 +126,7 @@ do {
 		printf("Something bad happned");
 	}
 
-	printf("Enter a guess: ");
+	printf("Make a guess: ");
         scanf("%49s", &guess);
 
 }while(1);
