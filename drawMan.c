@@ -1,6 +1,20 @@
 #include <stdio.h>
 #include <string.h>
 
+void wordLength() {
+        int len;
+        int i;
+
+        char targetWord[] = "program";
+
+        len = sizeof(targetWord) / sizeof(targetWord[0]);
+
+        for (i = 0; i < len; i++) {
+                printf("_ ");
+        }
+        printf("\n");
+}
+
 int main() {
 	int x;
 	int y;
@@ -17,8 +31,12 @@ int main() {
 	printf("      ||\n");
 	printf("______||\n");
 
-	printf("Make a guess: ");
-	scanf("%49s", &guess);
+	printf("I have selected a word.\n");
+    wordLength();
+    printf("\n");
+    printf("Make a guess: ");
+    scanf("%49s", &userGuess);
+	
 do {
 
 	if (strcmp(word, guess) == 0) {
