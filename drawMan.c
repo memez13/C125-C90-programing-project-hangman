@@ -1,11 +1,39 @@
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
+
+#define MAX_TRIES = 7;
+#define WORDS = 5;
+#define WORD_LEN = 25;
+
+char word_bank[WORD_LEN][WORDS] = { "extraterrestrial", "industry", "vote", "map", "contemporary" };
+
+int checkGuess(char word[], char display[], char guess) {  //check guess letter to random word from word_bank
+	int found = 0;
+	int i;
+	for (i = 0; i < strlen(word); i++) {
+			if (word[i] == guess){
+				display[i] = guess;
+				found = 1;
+			}
+	}
+	return found;
+}
+
+void showStatus(char display[], int triesLeft){		//rough draft pulled from homework. Make it implement hangman display instead
+		printf("\nCurrent Progress: ");
+		int i;
+		for(i = 0; i < strlen(display); i++){
+				printf("%c", display[i]);
+		}
+		printf("\n");
+}
 
 void wordLength() {
         int len;
         int i;
 
-        char targetWord[] = "program";
+        char targetWord[] = "program";   //implement random word pulled from word_bank (might need to pull it from another FILE)
 
         len = sizeof(targetWord) / sizeof(targetWord[0]);
 
@@ -15,7 +43,7 @@ void wordLength() {
         printf("\n");
 }
 
-int main() {
+int main() {   //Somehow figure out a way to implement memory allocation into this project.....
 	int x;
 	int y;
 
