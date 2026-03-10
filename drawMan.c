@@ -63,7 +63,7 @@ int main() {   //Somehow figure out a way to implement memory allocation into th
     wordLength();
     printf("\n");
     printf("Make a guess: ");
-    scanf("%49s", &userGuess);
+    scanf("%49s", &guess);
 	
 do {
 
