@@ -32,10 +32,12 @@ void showStatus(char display[], int triesLeft){		//rough draft pulled from homew
 void wordLength() {
         int len;
         int i;
+		int n = 5; //words in bank
 
-        char targetWord[] = "program";   //implement random word pulled from word_bank (might need to pull it from another FILE)
-
-        len = sizeof(targetWord) / sizeof(targetWord[0]);
+        srand(time(NULL));
+		int word_choice = rand() % n;   //implement random word pulled from word_bank (might need to pull it from another FILE)
+		word = word_bank[word_choice];
+	
 
         for (i = 0; i < len; i++) {
                 printf("_ ");
