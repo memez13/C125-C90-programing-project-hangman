@@ -1,56 +1,15 @@
 #include <stdio.h>
 #include <string.h>
-#include <time.h>
+#include "wordCheck.c"
 
-#define MAX_TRIES = 7;
-#define WORDS = 5;
-#define WORD_LEN = 25;
-
-char word_bank[WORD_LEN][WORDS] = { "extraterrestrial", "industry", "vote", "map", "contemporary" };
-
-int checkGuess(char word[], char display[], char guess) {  //check guess letter to random word from word_bank
-	int found = 0;
-	int i;
-	for (i = 0; i < strlen(word); i++) {
-			if (word[i] == guess){
-				display[i] = guess;
-				found = 1;
-			}
-	}
-	return found;
-}
-
-void showStatus(char display[], int triesLeft){		//rough draft pulled from homework. Make it implement hangman display instead
-		printf("\nCurrent Progress: ");
-		int i;
-		for(i = 0; i < strlen(display); i++){
-				printf("%c", display[i]);
-		}
-		printf("\n");
-}
-
-void wordLength() {
-        int len;
-        int i;
-		int n = 5; //words in bank
-
-        srand(time(NULL));
-		int word_choice = rand() % n;   //implement random word pulled from word_bank (might need to pull it from another FILE)
-		word = word_bank[word_choice];
-	
-
-        for (i = 0; i < len; i++) {
-                printf("_ ");
-        }
-        printf("\n");
-}
-
-int main() {   //Somehow figure out a way to implement memory allocation into this project.....
+int main() {
 	int x;
 	int y;
+	int len;
+	int i;
 
-	char word[] = "program";
-	char guess[50]; 
+	char targetWord[8] = "program";
+	char userGuess[50]; 
 
 	printf(" ------\n");
 	printf("      ||\n");
@@ -62,20 +21,20 @@ int main() {   //Somehow figure out a way to implement memory allocation into th
 	printf("______||\n");
 
 	printf("I have selected a word.\n");
-    wordLength();
-    printf("\n");
-    printf("Make a guess: ");
-    scanf("%49s", &guess);
-	
-do {
+	wordLength();
+	printf("\n");
+	printf("Make a guess: ");
+	scanf("%49s", &userGuess);
 
-	if (strcmp(word, guess) == 0) {
+do {	
+
+	if ((strcmp(targetWord, userGuess) == 0)) {
 		y++;
-	}
-
+    	}	
+	
 	else {
-		x++;
-		printf("Wrong guess!");
+   		x++;
+        	printf("Wrong guess!\n");	
 	}
 
 	if (x == 1) {
@@ -158,24 +117,26 @@ do {
         	printf("      ||\n");
         	printf("______||\n");
 
-		printf("GAME OVER. YOU LOSE.\n");
+		printf("GAME OVER.\n");
+		printf("YOU LOSE.\n");
 	
 		break;
 	}
 
 	if (y == 1) {
 
-		printf("GAME OVER. YOU WIN.\n");
+		printf("GAME OVER.\n");
+		printf("YOU WIN.\n");
 
 		break;
 	}
 	
 	else {
-		printf("Something bad happned");
+		//just to give the code an out
 	}
 
 	printf("Make a guess: ");
-        scanf("%49s", &guess);
+        scanf("%49s", &userGuess);
 
 }while(1);
 
