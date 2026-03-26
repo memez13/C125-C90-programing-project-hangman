@@ -2,6 +2,7 @@
 #include <string.h>
 #include <time.h>
 #include "wordCheck.c"
+#include "head.h"
 #define MAX_TRIES 7;
 #define WORDS 5;
 #define WORD_LEN 25;
@@ -30,9 +31,9 @@ void showStatus(char display[], int triesLeft){		//rough draft pulled from homew
 }
 
 int main() {   //Somehow figure out a way to implement memory allocation into this project.....
-	int x;
-	int y;
-	int c;
+	extern int x;
+	extern int y;
+	extern int c;
 
 	char word[] = "program";
 	char guess[50]; 
