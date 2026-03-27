@@ -8,27 +8,14 @@
 #define WORD_LEN 25;
 
 const char *word_bank[] = { "extraterrestrial", "industry", "vote", "map", "contemporary", "program" };
-
-int checkGuess(const char *word, char guess) {  //check guess letter to random word from word_bank
-	int found = 0;
-	int i;
-	int len = strlen(word);
+wordLength(const char *word) {
 	for (i = 0; i < len; i++) {
-			if (word[i] == guess[0]){
-				found = 1;
-			}
+    	            printf("_ ");
+        	}
+        	printf("\n");
 	}
-	return found;
-}
 
-void showStatus(char display[], int triesLeft){		//rough draft pulled from homework. Make it implement hangman display instead
-		printf("\nCurrent Progress: ");
-		int i;
-		for(i = 0; i < strlen(display); i++){
-				printf("%c", display[i]);
-		}
-		printf("\n");
-}
+
 
 int main() {   //Somehow figure out a way to implement memory allocation into this project.....
 	extern int x;
