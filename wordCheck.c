@@ -14,4 +14,14 @@ void wordSelect() {
         const char *random_word = word_bank[random_index];
 }
         
-
+int checkGuess(const char *word, char guess) {  //check guess letter to random word from word_bank
+	int found = 0;
+	int i;
+	int len = strlen(word);
+	for (i = 0; i < len; i++) {
+			if (word[i] == guess[0]){
+				found = 1;
+			}
+	}
+	return found;
+}
