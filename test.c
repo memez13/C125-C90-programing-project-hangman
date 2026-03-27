@@ -9,12 +9,12 @@
 
 const char *word_bank[] = { "extraterrestrial", "industry", "vote", "map", "contemporary", "program" };
 
-int checkGuess(char word[], char display[], char guess) {  //check guess letter to random word from word_bank
+int checkGuess(const char *word, char guess) {  //check guess letter to random word from word_bank
 	int found = 0;
 	int i;
-	for (i = 0; i < strlen(word); i++) {
-			if (word[i] == guess){
-				display[i] = guess;
+	int len = strlen(word);
+	for (i = 0; i < len; i++) {
+			if (word[i] == guess[0]){
 				found = 1;
 			}
 	}
@@ -35,7 +35,7 @@ int main() {   //Somehow figure out a way to implement memory allocation into th
 	extern int y;
 	extern int c;
 
-	char word[] = "program";
+	const char *word = random_word;
 	char guess[50]; 
 
 	printf(" ------\n");
@@ -52,7 +52,7 @@ int main() {   //Somehow figure out a way to implement memory allocation into th
     	printf("\n");
     	printf("Make a guess: ");
     	scanf("%49s", &guess);
-	
+		checkWord(word, guess);
 do {
 
 	if (strcmp(word, guess) == 0) {
@@ -62,7 +62,9 @@ do {
 	else {
 		x++;
 		printf("Wrong guess!\n");
+		printf(Current Prgress: ");
 		wordLength();
+		printf("%s\n", word);
 	}
 
 	if (x == 1) {
