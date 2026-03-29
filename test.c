@@ -160,8 +160,9 @@ do {
 	}
 
 	printf("Make a guess: ");
-        scanf("%49s", &guess);
-
+	scanf("%49s", &guess);
+	checkGuess(woed, guess);
+	
 }while(1);
 
 	return 0;
