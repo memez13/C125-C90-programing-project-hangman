@@ -8,7 +8,6 @@
 #define WORD_LEN 25;
 
 const char *word_bank[] = { "extraterrestrial", "industry", "vote", "map", "contemporary", "program" };
-const char *word_bank[] = { "extraterrestrial", "industry", "vote", "map", "contemporary" };
 int x = sizeof(word_bank) / sizeof(word_bank[0]);
 
 srand((unsigned)time(NULL));
