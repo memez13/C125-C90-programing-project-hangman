@@ -161,7 +161,7 @@ do {
 
 	printf("Make a guess: ");
 	scanf("%49s", &guess);
-	checkGuess(woed, guess);
+	checkGuess(word, guess);
 	
 }while(1);
 
