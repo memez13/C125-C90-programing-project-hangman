@@ -31,7 +31,8 @@ int main() {   //Somehow figure out a way to implement memory allocation into th
 	     revealed[i] = '_';	
 	}     
 	revealed[len] = '\0';
-		
+
+	printf(" -------\n");
 	printf("      ||\n");
 	printf("      ||\n");
 	printf("      ||\n");
@@ -69,7 +70,7 @@ do {
 
 	else if (x == 1) {
 
-		printf(" ------\n");
+		    printf(" ------\n");
         	printf("  |   ||\n");
         	printf("  O   ||\n");
         	printf("      ||\n");
@@ -83,7 +84,7 @@ do {
 
 	else if (x == 2) {
 
-		printf(" ------\n");
+			printf(" ------\n");
         	printf("  |   ||\n");
         	printf("  O   ||\n");
         	printf("  |   ||\n");
@@ -96,7 +97,7 @@ do {
 	}
 
 	else if (x == 3) {
-		printf(" ------\n");
+			printf(" ------\n");
         	printf("  |   ||\n");
         	printf("  O   ||\n");
         	printf(" (|   ||\n");
@@ -110,7 +111,7 @@ do {
 
 	else if (x == 4) {
 
-		printf(" ------\n");
+			printf(" ------\n");
         	printf("  |   ||\n");
         	printf("  O   ||\n");
         	printf(" (|)  ||\n");
@@ -124,7 +125,7 @@ do {
 
 	else if (x == 5) {
 
-		printf(" ------\n");
+			printf(" ------\n");
         	printf("  |   ||\n");
         	printf("  O   ||\n");
         	printf(" (|)  ||\n");
@@ -138,7 +139,7 @@ do {
 
 	else if (x == 6) {
 
-		printf(" ------\n");
+			printf(" ------\n");
         	printf("  |   ||\n");
         	printf("  O   ||\n");
         	printf(" (|)  ||\n");
