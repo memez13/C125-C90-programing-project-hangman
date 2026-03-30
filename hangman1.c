@@ -1,8 +1,13 @@
+/*
+Authors: Cole and Stanley
+Files: hangman1.c, head.h, wordCheck1.c
+Project: A fun game of Hangman, compiled with all the concepts we learned
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "wordCheck.c"
+#include "wordCheck1.c"
 #include "head.h"
 #define MAX_TRIES 7;
 #define WORDS 5;
