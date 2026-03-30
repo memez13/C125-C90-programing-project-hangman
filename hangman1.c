@@ -55,11 +55,6 @@ int main() {   //Somehow figure out a way to implement memory allocation into th
 	}
 	printf("Current Progress: ");
 	wordLength(revealed);
-
-
-	printf("word: %s\n", word);
-	printf("revealed: %s\n", revealed);
-
  
 	if (wordComplete(word, revealed)) {
 		y++;
