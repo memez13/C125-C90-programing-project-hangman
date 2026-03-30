@@ -9,19 +9,6 @@ Project: A fun game of Hangman, compiled with all the concepts we learned
 #include <time.h>
 #include "wordCheck1.c"
 #include "head.h"
-#define MAX_TRIES 7;
-#define WORDS 5;
-#define WORD_LEN 25;
-
-
-void wordLength(char *revealed) {
-	int i;
-	int len = strlen(revealed);
-	for (i = 0; i < len; i++) {
-    	            printf("%c", revealed[i]);
-        	}
-        	printf("\n");
-	}
 
 int main() {   //Somehow figure out a way to implement memory allocation into this project.....
 	srand((unsigned)time(NULL));
