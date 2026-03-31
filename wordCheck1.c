@@ -27,3 +27,23 @@ int wordComplete(const char *word, const char *revealed){
 	return strcmp(word, revealed) == 0;
 }
 
+int doubleCheck(const char *guess) {
+        int i;
+
+        if (guess[0] == '\0' || guess[0] == '\n') {
+                return 0; 
+        }
+
+        for (i = 0; guess[i] != '\0' && guess[i] != '\n'; i++) {
+                if (!isalpha((unsigned char)guess[i]) && guess[i] != ' ') { 
+                        return 0; 
+                }
+
+                if (!isalpha((unsigned char)guess[i]) && guess[i] != ' ' && guess[i] != '\n') {
+                           return 0; 
+                }
+
+        }
+    return 1; 
+
+}
