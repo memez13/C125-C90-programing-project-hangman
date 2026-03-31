@@ -7,8 +7,9 @@ Project: A fun game of Hangman, compiled with all the concepts we learned
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "wordCheck1.c"
 #include "head.h"
+#include "wordCheck1.c"
+#include "SAVE_file.c"
 
 int main() {   //Somehow figure out a way to implement memory allocation into this project.....
 	srand((unsigned)time(NULL));
@@ -45,7 +46,7 @@ int main() {   //Somehow figure out a way to implement memory allocation into th
     	wordLength(revealed);
     	printf("\n");
     	printf("Make a guess: ");
-    	scanf("%49s", &guess);
+    	scanf("%49s", guess);
 		doubleCheck(guess);
 
         if (doubleCheck(guess) != 1) {
@@ -58,6 +59,8 @@ int main() {   //Somehow figure out a way to implement memory allocation into th
         else {
                 //give the code an out
         }
+
+	SAVE(guess);
 	int found = checkGuess(word, guess, revealed);
 	if (found) {
 		printf("Good guess!\n");
@@ -76,6 +79,20 @@ do {
 
 	if (y == 1){
 	   printf("GAME OVER. YOU WIN!\n");
+	   printf("Would you like to see your guesses?");
+	   printf("(y or n): ");
+	   char yes_no;
+	   scanf("%c", &yes_no);
+	   while (yes_no != 'y' || yes_no != 'n' || yes_no != 'Y' || yes_no != 'N') {
+			printf("Invalid character. Enter y or n: ");
+			scanf("%c", &yes_no);
+	   }   
+	   if (yes_no == 'y' || yes_no == 'Y'){
+			printf("Loading saves now....");
+		    LOAD();
+	   } else {
+			printf("Thank you for playing. Have a nice day!");
+	   }
 	   break;
 	}
 
@@ -160,7 +177,20 @@ do {
         	printf("______||\n");
 
 		printf("GAME OVER! YOU LOSE!\n");
-	
+		printf("Would you like to see your guesses?");
+	    printf("(y or n): ");
+	    char yes_no;
+	    scanf("%c", &yes_no);
+	    while (yes_no != 'y' || yes_no != 'n' || yes_no != 'Y' || yes_no != 'N') {
+			 printf("Invalid character. Enter y or n: ");
+			 scanf("%c", &yes_no);
+	    }   
+	    if (yes_no == 'y' || yes_no == 'Y'){
+			 printf("Loading saves now....");
+		     LOAD();
+	    } else {
+			 printf("Thank you for playing. Have a nice day!");
+	    }
 		break;
 	}
 	
@@ -182,6 +212,8 @@ do {
         else {
                 //give the code an out
         }
+
+	SAVE(guess);
 	found = checkGuess(word, guess, revealed);
 	if (found) {
 		printf("Good guess!\n");
