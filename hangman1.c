@@ -46,7 +46,18 @@ int main() {   //Somehow figure out a way to implement memory allocation into th
     	printf("\n");
     	printf("Make a guess: ");
     	scanf("%49s", &guess);
+		doubleCheck(guess);
 
+        if (doubleCheck(guess) != 1) {
+                printf("Invalid guess. Try again\n");
+                printf("Make a guess: ");
+                scanf("%49s", &guess);
+                doubleCheck(guess);
+        }
+
+        else {
+                //give the code an out
+        }
 	int found = checkGuess(word, guess, revealed);
 	if (found) {
 		printf("Good guess!\n");
@@ -159,8 +170,18 @@ do {
 	
 	printf("Make a guess: ");
 	scanf("%49s", guess);
-	
+	doubleCheck(guess);
 
+        if (doubleCheck(guess) != 1) {
+                printf("Invalid guess. Try again\n");
+                printf("Make a guess: ");
+                scanf("%49s", &guess);
+                doubleCheck(guess);
+        }
+
+        else {
+                //give the code an out
+        }
 	found = checkGuess(word, guess, revealed);
 	if (found) {
 		printf("Good guess!\n");
